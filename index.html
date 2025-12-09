@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<!-- Link to external CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER / NAVIGATION -->
+<header class="nav-container">
+    <!-- Site logo / name -->
+    <h1 class="logo">Ivhan Jedd A. Alias</h1>
+
+    <!-- Navigation links -->
+    <nav>
+        <a href="contact.html">Contact</a>       <!-- Link to Contact page -->
+        <a href="about_me.html">About me</a>    <!-- Link to About Me page -->
+        <a href="project.html">Projects</a>     <!-- Link to Projects page -->
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <!-- Profile picture -->
+    <img src="profile.jpg" alt="Profile Photo" class="profile-pic">
+
+    <!-- Hero text -->
+    <div class="hero-text">
+        <h2>
+            Hi Everyone! I'm Ivhan, BSIT student from Bohol Island State University.
+        </h2>
+    </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+  // Wait until the DOM is fully loaded
+  document.addEventListener("DOMContentLoaded", function() {
+   
+    // Fade-in effect for page load
+    document.body.style.opacity = 0;
+    requestAnimationFrame(() => {
+      document.body.style.opacity = 1;
+    });
+
+    // Smooth fade-out for navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        const href = this.getAttribute('href'); // Get destination
+        document.body.classList.add('fade-out'); // Add fade-out class
+        setTimeout(() => {
+          window.location = href; // Navigate after fade-out
+        }, 200); // Delay 200ms
+      });
+    });
+
+    // Sticky / dynamic header effect on scroll
+    const nav = document.querySelector('.nav-container');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {          // If scrolled more than 50px
+            nav.classList.add('scrolled');  // Add scrolled class
+        } else {
+            nav.classList.remove('scrolled'); // Remove scrolled class
+        }
+    });
+  });
+</script>
+
+</body>
+</html>

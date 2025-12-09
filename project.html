@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Projects</title>
+
+<!-- Link to external CSS -->
+<link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+<!-- HEADER / NAVIGATION -->
+<header>
+    <!-- Site logo / name -->
+    <h1 class="logo">Ivhan jedd A. Alias</h1>
+
+    <!-- Navigation links -->
+    <nav>
+         <a href="about_me.html">About me</a>    <!-- Link to About Me page -->
+         <a href="contact.html">Contact</a>      <!-- Link to Contact page -->
+         <a href="index.html">Home</a>           <!-- Link to Home page -->
+    </nav>
+</header>
+
+<!-- PROJECTS SECTION -->
+<section class="projects-section">
+    <!-- Section title -->
+    <h2>My Projects</h2>
+
+    <!-- Container for project cards -->
+    <div class="projects-container">
+
+        <!-- Project Card 1 -->
+        <div class="project-card">
+            <img src="" alt="NO PICTURE">       <!-- Project image placeholder -->
+            <h3>Riza Convenience Store Management System</h3> <!-- Project title -->
+            <p>A small system that provides easy stocks and sales tracking</p> <!-- Project description -->
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card">
+            <img src="Screenshot (125).png" alt="NO PICTURE">
+            <h3>Riza Convenience Store Management System</h3>
+            <p>A small system that provides easy stocks and sales tracking</p>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card">
+            <img src="Screenshot (113).png" alt="Project 3">
+            <h3>FoodHub - Food Recipes Website</h3>
+            <p>A website for those who want to learn new recipes and also share their recipes</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+  // Wait until the DOM is fully loaded
+  document.addEventListener("DOMContentLoaded", function() {
+    
+    // Fade-in effect for page load
+    document.body.style.opacity = 0;
+    requestAnimationFrame(() => {
+      document.body.style.opacity = 1;
+    });
+
+    // Smooth fade-out for navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();                   // Prevent default link behavior
+        const href = this.getAttribute('href'); // Get destination link
+        document.body.classList.add('fade-out'); // Add fade-out class
+        setTimeout(() => {
+          window.location = href;             // Navigate after fade-out
+        }, 200);                               // Delay 200ms
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

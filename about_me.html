@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata and responsive settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="about_me.css">
+</head>
+<body>
+
+<!-- HEADER SECTION -->
+<header>
+    <!-- Website logo / name -->
+    <h1 class="logo">Ivhan jedd A. Alias</h1>
+
+    <!-- Navigation menu -->
+    <nav>
+         <a href="project.html">Projects</a> <!-- Link to Projects page -->
+         <a href="contact.html">Contact</a>  <!-- Link to Contact page -->
+         <a href="index.html">Home</a>       <!-- Link to Home page -->
+    </nav>
+</header>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+    <!-- Profile image -->
+    <img src="profile.jpg" alt="Profile Photo" class="about-pic">
+
+    <!-- Section heading -->
+    <h2>About Me</h2>
+
+    <!-- About content paragraphs -->
+    <p>
+        Hello! I’m Ivhan, a BSIT student from 
+        Bohol Island State University.  
+        I was born and raised in Bohol, Philippines where I grew up in a dauis town and always had good music playing around the house. These threads of family, basketball, and music have defined my life path and experiences. I am entering my third year at the Bohol Island State Uneversity where I am studying Information Technology.
+    </p>
+
+    <p>
+        Outside of tech, I love sports, music, and exploring creative hobbies.  
+        I enjoy learning new things and developing skills that help me grow both personally and professionally.
+    </p>
+
+    <p>
+        My goal is to become a Web Designer and work on meaningful projects that can help people and create real impact.
+        I believe in continuous learning and pushing myself to improve every day.
+    </p>
+</section>
+
+<!-- JAVASCRIPT FOR FADE EFFECT AND NAVIGATION -->
+<script>
+  // Wait until the DOM is fully loaded
+  document.addEventListener("DOMContentLoaded", function() {
+    
+    // Start page with invisible body
+    document.body.style.opacity = 0;
+
+    // Fade in effect for the page
+    requestAnimationFrame(() => {
+      document.body.style.opacity = 1;
+    });
+
+    // Smooth fade-out transition for navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default navigation
+        const href = this.getAttribute('href'); // Get link target
+        document.body.classList.add('fade-out'); // Add fade-out class
+        setTimeout(() => {
+          window.location = href; // Navigate after fade-out
+        }, 200); // Delay 200ms
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
